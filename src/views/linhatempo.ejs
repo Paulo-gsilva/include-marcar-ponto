@@ -1,0 +1,29 @@
+<%- include('include/header')%>
+  <body>
+    <a href=<%=url%> id="seta"<></a>
+
+    <section class="linha-tempo-section">
+      <h1>Linha do Tempo</h1>
+      <hr />
+      <div class="linha-tempo-div">
+        <table class="table">
+          <thead class="table-head">
+            <tr>
+              <th>Data</th>
+              <th>Horário</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+          <%timeArray.map((time) => {%>
+            <tr>
+              <td><%=time.employeeDateEntry%></td>
+              <td><%=time.employeeHourEntry%></td>
+            </tr>
+            <%});%>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>

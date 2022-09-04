@@ -1,7 +1,9 @@
 const sqlServer = require("mssql");
 const sqlServerPool = require("../../config");
 const validation = [];
+var name = "string";
 var url;
+var urltime;
 
 exports.loginPage = (req, res) => {
   res.render("login");
@@ -39,6 +41,7 @@ exports.loginValidation = async (req, res) => {
       validation.push(result.recordset[0].employeeId);
       const employeeName = result.recordset[0].employeeName;
       url = req.originalUrl;
+      name = employeeName;
       return res.render("markpoint", { employeeName });
     }
   } catch (error) {
@@ -54,8 +57,72 @@ exports.profilePage = async (req, res) => {
       .query(`SELECT * FROM employee where employeeId = ${validation[0]}`);
 
     const dataProfile = result.recordset[0];
-    validation.pop();
+    console.log(validation);
+    validation.splice(0, validation.length);
     return res.render("perfil", { dataProfile, url });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.markPointEntry = async (req, res) => {
+  const hoursNow = new Date().getHours();
+  const minutesNow = new Date().getMinutes();
+  const secondsNow = new Date().getSeconds();
+
+  let minutes = minutesNow,
+    seconds = secondsNow;
+  if (minutesNow < 10) minutes = "0" + minutes;
+  if (secondsNow < 10) seconds = "0" + seconds;
+
+  const dateYear = new Date().getFullYear();
+  const dateMonth = new Date().getMonth();
+  const dateDay = new Date().getDate();
+
+  let month = dateMonth;
+  let day = dateDay;
+  if (dateMonth < 10) month = "0" + (month + 1);
+  if (dateDay < 10) day = "0" + day;
+
+  const dayNow = `${day}/${month}/${dateYear}`;
+  const timeNow = `${hoursNow}:${minutes}:${seconds}`;
+  try {
+    const sqlServerConnect = await sqlServerPool();
+    await sqlServerConnect
+      .request()
+      .input("emplyoeeId", sqlServer.Int, validation[0])
+      .input("employeeHourEntry", sqlServer.VarChar, timeNow)
+      .input("employeeDateEntry", sqlServer.VarChar, dayNow)
+      .query(
+        "INSERT INTO PointRegisterEntry(employeeId, employeeHourEntry, employeeDateEntry) VALUES (@emplyoeeId, @employeeHourEntry, @employeeDateEntry)"
+      );
+    const employeeName = name;
+
+    console.log(validation);
+    validation.splice(0, validation.length);
+    return res.render("markpointdescriptions", { employeeName });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.timeLine = async (req, res) => {
+  try {
+    const sqlServerConnect = await sqlServerPool();
+    const result = await sqlServerConnect
+      .request()
+      .query(
+        `SELECT * FROM PointRegisterEntry where employeeId = ${validation[0]}`
+      );
+
+    const timeArray = [];
+    for (let i of result.recordset) {
+      timeArray.push(i);
+    }
+
+    console.log(validation);
+    validation.splice(0, validation.length);
+    res.render("linhatempo", { timeArray, url });
   } catch (error) {
     console.log(error);
   }

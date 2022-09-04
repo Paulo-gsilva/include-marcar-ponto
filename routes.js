@@ -9,4 +9,10 @@ route.get("/marcar-ponto", loginController.loginValidation);
 //ROTA PROFILE
 route.get("/perfil", loginController.profilePage);
 
+//MARCAR PONTO
+route.post("/marcarpontodescricao", loginController.markPointEntry);
+
+//LINAH DO TEMPO
+route.get("/linhadotempo", loginController.timeLine);
+
 module.exports = route;

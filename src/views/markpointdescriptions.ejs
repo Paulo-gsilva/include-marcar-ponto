@@ -1,0 +1,22 @@
+<%- include('include/header')%>
+  <body>
+    <nav class="cabecalho">
+      <div class="img-perfil"></div>
+      <div class="usuarios">
+        <h4><%=employeeName%></h4>
+        <a class="perfil-usuario" href="/perfil">Perfil</a>
+      </div>
+    </nav>
+    <section class="marca-ponto">
+      <form method="post" action="/marcarpontodescricao" class="inicio-contagem">
+        <h1 class="contador">00:00:00</h1>
+        <button class="inicio-contagem-button" type="submit">INICIAR</button>
+      </form>
+      <hr />
+      <div class="descricao">
+        <h4><a href="/linhadotempo">Linha do Tempo</a></h4>
+      </div>
+    </section>
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>

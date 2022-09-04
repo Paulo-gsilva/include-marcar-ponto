@@ -8,14 +8,13 @@
       </div>
     </nav>
     <section class="marca-ponto">
-      <div class="inicio-contagem">
+      <form method="post" action="/marcarpontodescricao" class="inicio-contagem">
         <h1 class="contador">00:00:00</h1>
-        <button class="inicio-contagem-button">INICIAR</button>
-      </div>
+        <button class="inicio-contagem-button" type="submit">INICIAR</button>
+      </form>
       <hr />
       <div class="descricao">
-        <h4>Linha do Tempo</h4>
-        <textarea class="descricao-input"></textarea>
+        <h4><a href="/linhadotempo">Linha do Tempo</a></h4>
       </div>
     </section>
     <script src="./assets/js/bundle.js"></script>

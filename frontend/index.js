@@ -1,11 +1,13 @@
 import "regenerator-runtime/runtime";
 import "./assets/css/style.css";
-import imgLogin from "../frontend/assets/img/img-login.png";
+import "./assets/js/main";
 
-function loadImg() {
-  const imgElement = document.querySelector(".login-section-img");
-  imgElement.src = imgLogin;
-  return imgElement;
-}
+// import imgLogin from "../frontend/assets/img/img-login.png";
 
-loadImg();
+// function loadImg() {
+//   const imgElement = document.querySelector(".login-section-img");
+//   imgElement.src = imgLogin;
+//   return imgElement;
+// }
+
+// loadImg();
