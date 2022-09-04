@@ -1,0 +1,31 @@
+<%- include('include/header')%>
+  <body>
+    <section class="login-section">
+      <img
+        class="login-section-img"
+      />
+      <form method="get" action="/marcar-ponto" class="login-section-login">
+        <header class="login-section-login-header">
+          <h1>Seja bem vindo(a)</h1>
+          <h2>ACESSE SUA CONTA</h2>
+        </header>
+        <div class="login-section-login-input">
+          <input
+            type="number"
+            class="identificador"
+            placeholder="Identificador"
+            name="identificador"
+            required
+          />
+          <input type="password" class="senha" placeholder="Senha" required name="senha"/>
+        </div>
+        <footer class="login-section-footer">
+          <button class="botao-login" type="submit">ENTRAR</button>
+        </footer>
+      </form>
+      <div class="login-section-singin hide"></div>
+    </section>
+
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>

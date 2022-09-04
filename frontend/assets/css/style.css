@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+
+:root {
+  --branco-gelo: #eeedf5;
+  --cinza: #3d3d40;
+  --azul-escuro: #000112;
+  --azul-marinho: #120a8f;
+  --azul-claro: #938df6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--azul-claro);
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--branco-gelo);
+}
+
+.login-section {
+  min-height: 100vh;
+  display: flex;
+}
+
+.login-section .login-section-img {
+  z-index: 0;
+  background: var(--branco-gelo);
+  width: 65%;
+  height: 100vh;
+  object-fit: cover;
+  margin-right: -1rem;
+}
+
+.login-section .login-section-login {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--branco-gelo);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: 0px 0px 20px 24px rgba(2, 12, 51, 0.15);
+  width: 38%;
+  height: 100vh;
+  padding: 6rem 4rem;
+}
+
+.login-section .login-section-login .login-section-login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-section .login-section-login .login-section-login-header h1 {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 52px;
+  color: var(--azul-marinho);
+}
+
+.login-section .login-section-login .login-section-login-header h2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 1.5rem;
+  color: var(--azul-marinho);
+}
+
+.login-section .login-section-login .login-section-login-input {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 20%;
+  justify-content: space-around;
+}
+
+.botao-login {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 38px;
+  text-align: center;
+  border-radius: 10px;
+  background: var(--azul-marinho);
+  color: var(--branco-gelo);
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.login-section .login-section-login .login-section-login-input input {
+  background: var(--branco-gelo);
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 2rem;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 30px;
+  border-bottom: 0.15rem solid var(--azul-claro);
+}
+
+.login-section
+  .login-section-login
+  .login-section-login-input
+  .identificador::-webkit-outer-spin-button,
+.login-section
+  .login-section-login
+  .login-section-login-input
+  .identificador::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.login-section .login-section-login .login-section-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.login-section .login-section-login .login-section-footer .botao-login:hover {
+  background: #130a8fe9;
+}
+
+@media (max-width: 1400px) {
+  .login-section .login-section-login {
+    padding: 6rem 1rem;
+  }
+
+  .login-section .login-section-login .login-section-login-header h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-section .login-section-img {
+    width: 100%;
+    position: relative;
+  }
+
+  .login-section .login-section-login {
+    position: absolute;
+    width: 80%;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+  }
+
+  .login-section .login-section-login .login-section-login-header h1 {
+    font-size: 25px;
+  }
+
+  .login-section .login-section-login .login-section-login-header h2 {
+    font-size: 18px;
+  }
+}
+
+/*========TELA DE MARCAR PONTO========*/
+hr {
+  border: 0;
+  border-top: 1px solid var(--azul-marinho);
+  width: 90%;
+  margin: 0px auto -45px auto;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  align-items: center;
+}
+
+.cabecalho .usuarios {
+  margin-left: 1rem;
+}
+
+.cabecalho .usuarios h4 {
+  color: #938df6;
+  filter: drop-shadow(0px 2px 3px #938df6);
+}
+
+.usuarios .perfil-usuario {
+  color: var(--azul-marinho);
+}
+
+.cabecalho .usuarios .perfil-usuario {
+  border: none;
+  cursor: pointer;
+}
+
+.img-perfil {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--azul-marinho);
+}
+
+.marca-ponto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+  padding: 0rem 2rem;
+}
+
+.marca-ponto .inicio-contagem {
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.marca-ponto .inicio-contagem h1 {
+  font-weight: 275;
+  height: 5rem;
+  font-size: 100px;
+  line-height: 150px;
+  color: var(--azul-marinho);
+}
+
+.marca-ponto .inicio-contagem button {
+  width: 50%;
+  height: 3rem;
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  border-radius: 10px;
+  background: var(--azul-marinho);
+  color: var(--branco-gelo);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.marca-ponto .inicio-contagem button:hover {
+  background: #130a8fe9;
+}
+
+.marca-ponto .descricao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-start;
+  height: 45vh;
+  width: 90%;
+}
+
+.marca-ponto .descricao h4 {
+  color: var(--azul-marinho);
+}
+
+.marca-ponto .descricao .descricao-input {
+  width: 90%;
+  height: 70%;
+  border: none;
+  outline: none;
+  color: var(--branco-gelo);
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  background: var(--azul-claro);
+  border-radius: 10px;
+}
+
+/* =========TELA DE PERFIL -============== */
+h3 {
+  color: #120a8f;
+}
+
+.conteudo {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.conteudo main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conteudo main h3 {
+  font-size: 2rem;
+}
+
+.dados {
+  width: 50vw;
+  height: 70vh;
+  background-color: #938df6;
+  border: none;
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.dados h4 {
+  width: 30%;
+  font-size: 1.5rem;
+  text-align: right;
+  color: var(--branco-gelo);
+}
+
+.dados .dados-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 0.8rem;
+}
+.dados .dados-input input {
+  width: 50%;
+  height: 2rem;
+  border-radius: 10px;
+  border: none;
+  margin-left: 10px;
+  background-color: var(--branco-gelo);
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: var(--azul-marinho);
+  outline: none;
+}
+
+.dados-input h4 {
+  margin-right: 10px;
+}
+
+.perfil {
+  height: 40vh;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.perfil .img {
+  background: var(--azul-claro);
+  border-radius: 50%;
+  height: 15rem;
+  width: 15rem;
+}
+
+.perfil .funcao {
+  margin-top: 1rem;
+  color: var(--azul-marinho);
+}
+
+#seta {
+  position: absolute;
+  padding: 7px;
+  box-shadow: 2px -2px 0 1px var(--azul-marinho) inset;
+  border: solid transparent;
+  border-width: 0 0 2px 2px;
+  transform: rotate(45deg);
+  left: 72px;
+  top: 72px;
+}
+
+@media (max-width: 1000px) {
+  .conteudo {
+    min-height: 100vh;
+    width: 90vw;
+    margin: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .conteudo main h3 {
+    font-size: 1.2rem;
+  }
+
+  .dados {
+    width: 80vw;
+    height: 55vh;
+  }
+
+  .dados h4 {
+    width: 30%;
+    font-size: 1rem;
+  }
+
+  .dados .dados-input input {
+    margin-left: 2.5rem;
+    height: 1.5rem;
+  }
+
+  .perfil .img {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .perfil .funcao {
+    margin-bottom: 2rem;
+  }
+}

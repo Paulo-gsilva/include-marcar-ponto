@@ -1,0 +1,43 @@
+<%- include('include/header')%>
+<style>
+ p {
+    color: red;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: -5rem;
+  }
+  @media(max-width: 1400px) {
+    p{margin-top: -3rem;}
+  }
+  </style>
+  <body>
+    <section class="login-section">
+      <img
+        class="login-section-img"
+      />
+      <form method="get" action="/marcar-ponto" class="login-section-login">
+        <header class="login-section-login-header">
+          <h1>Seja bem vindo(a)</h1>
+          <h2>ACESSE SUA CONTA</h2>
+        </header>
+        <div class="login-section-login-input">
+          <input
+            type="number"
+            class="identificador"
+            placeholder="Identificador"
+            name="identificador"
+            required
+          />
+          <input type="password" class="senha" placeholder="Senha" required name="senha"/>
+        </div>
+        <p class="error-login">Identificador ou Senha incorretos</p>
+        <footer class="login-section-footer">
+          <button class="botao-login" type="submit">ENTRAR</button>
+        </footer>
+      </form>
+      <div class="login-section-singin hide"></div>
+    </section>
+
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>
