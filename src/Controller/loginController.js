@@ -3,7 +3,6 @@ const sqlServerPool = require("../../config");
 const validation = [];
 var name = "string";
 var url;
-var urltime;
 
 exports.loginPage = (req, res) => {
   res.render("login");
@@ -40,9 +39,10 @@ exports.loginValidation = async (req, res) => {
       }
       validation.push(result.recordset[0].employeeId);
       const employeeName = result.recordset[0].employeeName;
+      const isAdmin = result.recordset[0].employeeAdminValidation;
       url = req.originalUrl;
       name = employeeName;
-      return res.render("markpoint", { employeeName });
+      return res.render("markpoint", { employeeName, isAdmin, url });
     }
   } catch (error) {
     console.log(error);
@@ -100,7 +100,7 @@ exports.markPointEntry = async (req, res) => {
 
     console.log(validation);
     validation.splice(0, validation.length);
-    return res.render("markpointdescriptions", { employeeName });
+    return res.render("markpointdescriptions", { employeeName, url });
   } catch (error) {
     console.log(error);
   }
@@ -123,6 +123,14 @@ exports.timeLine = async (req, res) => {
     console.log(validation);
     validation.splice(0, validation.length);
     res.render("linhatempo", { timeArray, url });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.integrationForm = async (req, res) => {
+  try {
+    res.render("forms", { url });
   } catch (error) {
     console.log(error);
   }

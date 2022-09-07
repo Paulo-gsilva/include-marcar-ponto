@@ -235,7 +235,7 @@ hr {
 }
 
 .marca-ponto .inicio-contagem button {
-  width: 50%;
+  width: 14rem;
   height: 3rem;
   font-size: 1.5rem;
   margin-top: 2.5rem;
@@ -482,4 +482,129 @@ hr {
   .linha-tempo-section .linha-tempo-div {
     width: 80vw;
   }
+}
+
+/*======FORMULARIO DE INTEGRACAO========*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+
+:root {
+  --branco-gelo: #eeedf5;
+  --cinza: #3d3d40;
+  --azul-escuro: #000112;
+  --azul-marinho: #120a8f;
+  --azul-claro: #938df6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--azul-claro);
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--branco-gelo);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--azul-marinho);
+  width: 100%;
+  height: 3rem;
+  margin: -10px auto -45px auto;
+}
+
+.admin-section {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.admin-section h1 {
+  color: var(--azul-marinho);
+  height: 5rem;
+  font-size: 30px;
+}
+
+.admin-forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin: 2rem;
+  width: 100%;
+}
+
+.admin-forms .primary-data,
+.admin-forms .secundary-data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  padding: 1rem;
+  width: 90%;
+}
+
+.admin-forms .primary-data div,
+.admin-forms .secundary-data div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  width: 25rem;
+}
+
+.admin-forms .primary-data div:last-child,
+.admin-forms .secundary-data div:last-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 10rem;
+}
+
+.admin-forms .primary-data div .adm,
+.admin-forms .secundary-data div .gender {
+  border: none;
+  background: var(--azul-claro);
+  padding: 0.5rem;
+  outline: none;
+  color: var(--azul-marinho);
+}
+
+input {
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: var(--azul-marinho);
+  background: var(--azul-claro);
+  width: 20rem;
+  height: 2rem;
+}
+
+button {
+  color: var(--branco-gelo);
+  padding: 0.5rem;
+  width: 6rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: var(--azul-marinho);
+  cursor: pointer;
+}
+
+button:hover {
+  background: #130a8fe9;
 }

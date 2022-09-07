@@ -15,4 +15,6 @@ route.post("/marcarpontodescricao", loginController.markPointEntry);
 //LINAH DO TEMPO
 route.get("/linhadotempo", loginController.timeLine);
 
+//FORMULARIO DE INTEGRACAO
+route.get("/formulariodeintegracao", loginController.integrationForm);
 module.exports = route;

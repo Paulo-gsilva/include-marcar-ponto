@@ -7,6 +7,11 @@
         <a class="perfil-usuario" href="/perfil">Perfil</a>
       </div>
     </nav>
+    <%if(isAdmin == 1){%>
+      <a href="/formulariodeintegracao">
+        <p class="admin-form">Formulário de integração</p>
+      </a>
+    <%}%>
     <section class="marca-ponto">
       <form method="post" action="/marcarpontodescricao" class="inicio-contagem">
         <h1 class="contador">00:00:00</h1>
